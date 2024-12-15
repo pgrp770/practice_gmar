@@ -14,7 +14,7 @@ def create_class(class_model: ClassModel):
             """
 
         params = {
-            "id": class_model.id
+            "class_id": class_model.id
         }
         result = session.run(query, params).single()
         print(f"class with id {class_model.id} was created")
@@ -23,3 +23,7 @@ def create_class(class_model: ClassModel):
             dict,
             itemgetter("class_id")
         )
+
+
+if __name__ == '__main__':
+    create_class(ClassModel(id='a'))

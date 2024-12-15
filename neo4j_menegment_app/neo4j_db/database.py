@@ -14,6 +14,13 @@ driver = GraphDatabase.driver(
     uri=neo4j_uri,
     auth=(user,password)
 )
-
 if __name__ == '__main__':
-    print(driver)
+
+    try:
+        with driver.session() as session:
+            session.run("RETURN 1")
+        print("Connection successful!")
+    except Exception as e:
+        print(f"Connection failed: {e}")
+    finally:
+        driver.close()
