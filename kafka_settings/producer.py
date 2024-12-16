@@ -1,6 +1,5 @@
 import json
 import os
-from ensurepip import bootstrap
 from dotenv import load_dotenv
 from kafka import KafkaProducer
 
@@ -17,3 +16,5 @@ def produce(topic: str, key, value):
         key=key.encode('utf-8'),
         value=value
     )
+    print(f"produce to {topic} <{key}:{value}>")
+    producer.flush()
