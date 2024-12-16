@@ -14,6 +14,8 @@ list_topics = [
     os.environ['POSTGRES_STUDENT_PROFILE_TOPIC'],
     os.environ['POSTGRES_STUDENT_LIFE_STILE_TOPIC'],
     os.environ['POSTGRES_STUDENT_PERFORMANCE_TOPIC'],
+    os.environ['POSTGRES_TEACHER_TOPIC'],
+    os.environ['TEACHER_TOPIC'],
     os.environ['ELASTIC_TOPIC']
 ]
 

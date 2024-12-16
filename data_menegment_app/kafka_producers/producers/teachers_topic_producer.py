@@ -5,13 +5,13 @@ import os
 from kafka_settings.producer import produce
 
 load_dotenv(verbose=True)
-teachers_topic = os.environ['NEO4J_TEACHERS_TOPIC']
+teachers_topic = os.environ['TEACHER_TOPIC']
 
 def produce_teachers():
     produce(
         topic=teachers_topic,
         key="test",
-        value="test"
+        value={"id":"id", "test":"test"}
     )
 
 
